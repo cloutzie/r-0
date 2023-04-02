@@ -1,0 +1,1 @@
+Tool for gathering, compiling, and displaying statistics in Crusaders Quest
