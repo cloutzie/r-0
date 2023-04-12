@@ -1,0 +1,8 @@
+# venv
+/venv
+
+# dotenv
+.env
+
+# other
+requirements.txt
