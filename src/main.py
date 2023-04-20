@@ -1,17 +1,20 @@
 import disnake
 from disnake.ext import commands
 
-from dotenv import load_dotenv; load_dotenv()
+from dotenv import dotenv_values; env=dotenv_values('.env')
 import os
 
-bot = commands.Bot()
+import random
+import asyncio
+
+bot = commands.InteractionBot()
+
 
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
 
-@bot.slash_command()
-async def ping(ctx):
-    await ctx.send('pong')
 
-bot.run(os.getenv('TOKEN'))
+
+bot.run(env['TOKEN'])
+
