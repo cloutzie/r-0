@@ -1,0 +1,26 @@
+/initiate drop recording
+
+bot says watching or something
+
+person submits image
+
+bot asks if thats it, if no, can post more pictures
+
+if it is all, pytesseract to check what stage, how many runs, drops etc etc
+
+bot says working
+
+once done, return a table with data like runs, drops stage etc
+
+ask if correct
+
+if not, increase tolerance and try again
+
+if not again, ask to manually change data
+
+if yes, populate nosql
+
+after that, fill google sheet with new data
+
+very cool
+
