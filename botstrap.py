@@ -3,9 +3,9 @@ from disnake.ext import commands
 
 from dotenv import dotenv_values; env=dotenv_values('.env')
 import os
-
-import random
 import asyncio
+
+from src.func.parse import parser
 
 
 bot = commands.InteractionBot()
@@ -26,11 +26,12 @@ class Submissions(commands.Cog):
         description = 'Submit runs for analysis'
     )
 
-    async def submit(ctx, image: disnake.Attachment, image2: disnake.Attachment = None):
-        await ctx.response.defer("Processing")
-        
-        await ctx.followup.send("Output")
-        
+    async def submit(ctx, image: disnake.Attachment):
+        await ctx.response.defer()
+        img = parser(await image.read())
+        await ctx.followup.send(img)
+
+
 
 bot.add_cog(Submissions(bot))
 bot.run(env['TOKEN'])
